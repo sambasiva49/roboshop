@@ -1,0 +1,11 @@
+frontend-dev.sambadevops.online
+mongodb-dev.sambadevops.online
+catalogue-dev.sambadevops.online
+redis-dev.sambadevops.online
+user-dev.sambadevops.online
+cart-dev.sambadevops.online
+mysql-dev.sambadevops.online
+shipping-dev.sambadevops.online
+rabbitmq-dev.sambadevops.online
+payment-dev.sambadevops.online
+dispatch-dev.sambadevops.online
