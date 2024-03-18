@@ -42,7 +42,7 @@ systemctl restart catalogue
 echo -e "\e[36m>>>>>>>> Copy Mongo repo<<<<<<<<<\e[0m"
 
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[36m>>>>>>>> Install Mongod Client  <<<<<<<<<\e[0m"
 
