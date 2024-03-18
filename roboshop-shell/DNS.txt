@@ -9,3 +9,5 @@ shipping-dev.sambadevops.online
 rabbitmq-dev.sambadevops.online
 payment-dev.sambadevops.online
 dispatch-dev.sambadevops.online
+
+https://github.com/sambasiva49/roboshop.git
