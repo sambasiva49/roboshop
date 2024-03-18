@@ -32,7 +32,7 @@ echo -e "\e[36m>>>>>>>>Install nodejs<<<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>> Copy systemd File<<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/roboshop/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
 
 echo -e "\e[36m>>>>>>>> Start Catalogue Service  <<<<<<<<<\e[0m"
 
