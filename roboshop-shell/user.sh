@@ -40,3 +40,13 @@ echo -e "\e[36m>>>>>>>>Restart the user<<<<<<<<<\e[0m"
 
 systemctl restart user
 
+echo -e "\e[36m>>>>>>>> Copy Mongo repo<<<<<<<<<\e[0m"
+
+
+cp /home/centos/roboshop/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+
+echo -e "\e[36m>>>>>>>> Install Mongod Client  <<<<<<<<<\e[0m"
+
+dnf install mongodb-org-shell -y
+mongo --host mongodb-dev.sambadevops.online </app/schema/catalogue.js
+
