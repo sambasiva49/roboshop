@@ -1,3 +1,5 @@
+source common.sh
+
 echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
 
@@ -10,7 +12,7 @@ echo -e "\e[36m>>>>>>>>install nodejs<<<<<<<<<\e[0m"
 dnf install nodejs -y
 echo -e "\e[36m>>>>>>>> add Application user <<<<<<<<<\e[0m"
 
-useradd roboshop
+useradd ${app_user}
 echo -e "\e[36m>>>>>>>>Create Application Directory <<<<<<<<<\e[0m"
 rm -rf /app
 

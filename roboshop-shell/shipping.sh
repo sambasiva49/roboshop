@@ -1,10 +1,10 @@
 
-
+source common.sh
 dnf install maven -y
 echo -e "\e[36m>>>>>>>> User add <<<<<<<<<\e[0m"
 
 
-useradd roboshop
+useradd ${app_user}
 rm -rf /app
 echo -e "\e[36m>>>>>>>> Creating Directroy <<<<<<<<<\e[0m"
 
