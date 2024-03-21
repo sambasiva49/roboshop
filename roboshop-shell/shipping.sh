@@ -1,5 +1,7 @@
 
-source common.sh
+script=${realpath "$0"}
+script_path={dirname "$script"}
+source ${script_path}/common.sh
 dnf install maven -y
 echo -e "\e[36m>>>>>>>> User add <<<<<<<<<\e[0m"
 
@@ -27,7 +29,7 @@ echo -e "\e[36m>>>>>>>> Move target <<<<<<<<<\e[0m"
 mv target/shipping-1.0.jar shipping.jar
 echo -e "\e[36m>>>>>>>> copy folder <<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop/roboshop-shell/shipping.service /etc/systemd/system/shipping.service
+cp ${script_path}/shipping.service /etc/systemd/system/shipping.service
 systemctl daemon-reload
 systemctl enable shipping
 echo -e "\e[36m>>>>>>>>  Restart the server  <<<<<<<<<\e[0m"

@@ -1,9 +1,14 @@
+
+script=${realpath "$0"}
+script_path={dirname "$script"}
+source ${script_path}/common.sh
+
 echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
 dnf module disable mysql -y
 echo -e "\e[36m>>>>>>>>copy the application <<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop/roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo
+cp ${script_path}/mysql.repo /etc/yum.repos.d/mysql.repo
 
 echo -e "\e[36m>>>>>>>>install mysql<<<<<<<<<\e[0m"
 

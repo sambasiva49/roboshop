@@ -1,4 +1,7 @@
-source common.sh
+script=${realpath "$0"}
+script_path={dirname "$script"}
+source ${script_path}/common.sh
+
 echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
 dnf module disable nodejs -y
@@ -34,7 +37,7 @@ npm install
 echo -e "\e[36m>>>>>>>> copy the directory <<<<<<<<<\e[0m"
 
 
-cp /home/centos/roboshop/roboshop-shell/cart.service /etc/systemd/system/cart.service
+cp ${script_path}/cart.service /etc/systemd/system/cart.service
 echo -e "\e[36m>>>>>>>>reload nodejs<<<<<<<<<\e[0m"
 
 systemctl daemon-reload

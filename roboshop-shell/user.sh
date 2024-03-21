@@ -1,4 +1,6 @@
-source common.sh
+script=${realpath "$0"}
+script_path={dirname "$script"}
+source ${script_path}/common.sh
 
 echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
@@ -34,7 +36,7 @@ npm install
 
 echo -e "\e[36m>>>>>>>> Copy systemd File<<<<<<<<<\e[0m"
 
-cp /home/centos/roboshop/roboshop-shell/user.service /etc/systemd/system/user.service
+cp ${script_path}/user.service /etc/systemd/system/user.service
 
 systemctl daemon-reload
 systemctl enable user
@@ -45,7 +47,7 @@ systemctl restart user
 echo -e "\e[36m>>>>>>>> Copy Mongo repo<<<<<<<<<\e[0m"
 
 
-cp /home/centos/roboshop/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 
 echo -e "\e[36m>>>>>>>> Install Mongod Client  <<<<<<<<<\e[0m"
 

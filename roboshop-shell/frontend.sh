@@ -1,5 +1,9 @@
+script=${realpath "$0"}
+script_path={dirname "$script"}
+source ${script_path}/common.sh
+
 dnf install nginx -y
-cp roboshop.conf /etc/nginx/default.d/roboshop.conf
+cp ${script_path}/roboshop.conf /etc/nginx/default.d/roboshop.conf
 
 systemctl enable nginx
 systemctl start nginx
