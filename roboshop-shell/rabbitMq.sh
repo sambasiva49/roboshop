@@ -3,6 +3,7 @@
 script=${realpath "$0"}
 script_path={dirname "$script"}
 source ${script_path}/common.sh
+my_rabbit_root_password=$1
 echo -e "\e[36m>>>>>>>>   download erlang  <<<<<<<<<\e[0m"
 
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
@@ -20,5 +21,5 @@ systemctl start rabbitmq-server
 
 echo -e "\e[36m>>>>>>>>   set up user   <<<<<<<<<\e[0m"
 
-rabbitmqctl add_user roboshop roboshop123
+rabbitmqctl add_user roboshop {my_rabbit_root_password}
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"

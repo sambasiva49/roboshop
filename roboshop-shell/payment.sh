@@ -2,6 +2,7 @@
 script=${realpath "$0"}
 script_path={dirname "$script"}
 source ${script_path}/common.sh
+my_rabbit_root_password=$1
 
 echo -e "\e[36m>>>>>>>> Install python<<<<<<<<<\e[0m"
 
@@ -15,6 +16,7 @@ cd /app
 unzip /tmp/payment.zip
 cd /app
 pip3.6 install -r requirements.txt
+sed -i -e "s|my_rabbit_root_password|{my_rabbit_root_password}|" ${script_path}/payment.service
 cp ${script_path}/payment.service /etc/systemd/system/payment.service
 systemctl daemon-reload
 systemctl enable payment
