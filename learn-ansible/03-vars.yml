@@ -9,11 +9,12 @@
 
 
 
-- name: Demo on Task Level Varibles
+- name: Demo on Play Level Varibles
   hosts: all
+
   tasks:
-   - name: print URL
-     ansible.builtin.debug:
-       msg: URL - {{ URL }}
-       vars:
-            URL: play.example.com
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+      vars:
+          URL: play.example.com
