@@ -1,0 +1,3 @@
+- name: hellow world
+  ansible.builtin.debug:
+    msg: hello rom role sample

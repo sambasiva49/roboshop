@@ -1,0 +1,7 @@
+video 30  ansible
+inventr
+
+## anisible-playbook -i /tem/inv -e ansible_user=centos -e ansibel_password=DevOps321 01-print.yml
+actually above methed is push mecahnism
+we can do pull mechanism id do we can install ansible on the perticuler node
+ansibel-pull -i localhost,U [git hub url] 01-print.yml

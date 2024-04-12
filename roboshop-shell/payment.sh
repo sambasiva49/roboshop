@@ -4,7 +4,10 @@ script_path={dirname "$script"}
 source ${script_path}/common.sh
 my_rabbit_root_password=$1
 
-echo -e "\e[36m>>>>>>>> Install python<<<<<<<<<\e[0m"
+if [ -z "$my_rabbit_root_password" ]; then
+    echo "roboshop password is missing"
+       exit
+    fi
 
 
 dnf install python36 gcc python3-devel -y

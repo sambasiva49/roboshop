@@ -2,7 +2,17 @@ app_user=roboshop
 
 script=${realpath "$0"}
 script_path={dirname "$script"}
-fun_nodejs(){
+
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
+
+echo -e "\e[36m>>>>>>>> Install Mongod Client  <<<<<<<<<\e[0m"
+
+dnf install mongodb-org-shell -y
+mongo --host mongodb-dev.sambadevops.online </app/schema/{component}.js
+#fun_nodejs(){
+
+  #print_head(){
+   # echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
 echo -e "\e[36m>>>>>>>>disable nodejs<<<<<<<<<\e[0m"
 
@@ -48,3 +58,40 @@ echo -e "\e[36m>>>>>>>> Restart server<<<<<<<<<\e[0m"
 
 systemctl restart {component}
 }
+
+useradd ${app_user}
+rm -rf /app
+echo -e "\e[36m>>>>>>>> Creating Directroy <<<<<<<<<\e[0m"
+
+mkdir /app
+
+echo -e "\e[36m>>>>>>>> Download shipping <<<<<<<<<\e[0m"
+
+curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip
+cd /app
+
+echo -e "\e[36m>>>>>>>> unzip the folder <<<<<<<<<\e[0m"
+
+unzip /tmp/shipping.zip
+cd /app
+echo -e "\e[36m>>>>>>>> clean the package <<<<<<<<<\e[0m"
+
+mvn clean package
+echo -e "\e[36m>>>>>>>> Move target <<<<<<<<<\e[0m"
+
+mv target/shipping-1.0.jar shipping.jar
+echo -e "\e[36m>>>>>>>> copy folder <<<<<<<<<\e[0m"
+
+cp ${script_path}/shipping.service /etc/systemd/system/shipping.service
+systemctl daemon-reload
+systemctl enable shipping
+echo -e "\e[36m>>>>>>>>  Restart the server  <<<<<<<<<\e[0m"
+
+systemctl restart shipping
+
+echo -e "\e[36m>>>>>>>>  install schema <<<<<<<<<\e[0m"
+
+dnf install mysql -y
+echo -e "\e[36m>>>>>>>>  Restart the server  <<<<<<<<<\e[0m"
+
+systemctl restart shipping

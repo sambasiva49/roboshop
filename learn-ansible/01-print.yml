@@ -1,0 +1,7 @@
+- name: print first yml file
+   host: all
+   tasks:
+     - name: print hellow world
+       ansible.builtin.debug:
+         msg: hellow world
+
