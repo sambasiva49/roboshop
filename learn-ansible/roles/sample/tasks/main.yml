@@ -1,3 +1,11 @@
 - name: hellow world
   ansible.builtin.debug:
     msg: hello rom role sample
+
+- name: Print variable rom Role
+  ansible.builtin.debug:
+    msg: URL - {{ URL }}
+
+- name: Print variable rom Play
+  ansible.builtin.debug:
+    msg: URL_play - {{ URL_PLAY }}
