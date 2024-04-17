@@ -32,3 +32,11 @@
     URL_PLAY: play.example.com
   roles:
     - sample
+
+## varible precedence frist precedence is command line varible
+##command line variable
+## task level
+## var dir from role 
+##variable from files
+## play level varibles
+## inventory varibles

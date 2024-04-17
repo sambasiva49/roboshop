@@ -1,0 +1,15 @@
+after installation of jenkins systemctl enable jenkins
+systemctl start jenkins
+
+select new item>create job >roboshop-infra>freestyle job >faste git repo >main branch>build steps >execute shell
+terrafrom init
+terrafrom apply -auto-approve
+
+>post build actions >delete workspace when build is done
+dashboard >manage jenkins>manage nodes and cloud >add new node >workstation  >no of executer 5>remote roo directory -->/home/centos/luanch method >
+launch via ssh >host --> workstaion private ip>add credintial>kind --> username and password >username-->centos>password-->DevOps321>id-->ssh>descrition-->ssh
+add>host key....-->non verifying verification statagy >install java on workstaion
+dashboard>clickon roboshop_infra>configure>resrict where to run-->workstation >save
+multienv
+--------
+dashboard>roboshop infra>this project is peramer-->add perameter>choice>name-->env>choice-->dev prod>save
