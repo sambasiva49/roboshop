@@ -75,11 +75,7 @@ resource "aws_instance" "instance" {
   instance_type = each.key["instance_type"]
   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-
-
-
-
-tags = {
+  tags = {
     Name = each.value["name"]
   }
 }

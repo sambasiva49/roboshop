@@ -5,3 +5,8 @@ inventr
 actually above methed is push mecahnism
 we can do pull mechanism id do we can install ansible on the perticuler node
 ansibel-pull -i localhost,U [git hub url] 01-print.yml
+
+
+state file
+--------
+search s3>name that sit
