@@ -13,3 +13,13 @@ dashboard>clickon roboshop_infra>configure>resrict where to run-->workstation >s
 multienv
 --------
 dashboard>roboshop infra>this project is peramer-->add perameter>choice>name-->env>choice-->dev prod>save
+
+state file
+--------
+search s3>name that sit
+
+go to roboshop infra in jenkins
+execute shell >
+this project parametarized>add para>chioce para>name-->env>choices-->dev prod
+terrafrom init -backend-config=env-${env}/state.tfvars
+terrafrom apply -auto-approve -var-file=env-${env}/main.tfvars
