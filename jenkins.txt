@@ -2,7 +2,7 @@ after installation of jenkins systemctl enable jenkins
 systemctl start jenkins
 
 select new item>create job >roboshop-infra>freestyle job >paste git repo >main branch>build steps >execute shell
-terraform init
+terraform init -backend-config=env-dev/state.tfvars
 terraformm apply -auto-approve
 
 >post build actions >delete workspace when build is done
