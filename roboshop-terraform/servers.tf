@@ -2,9 +2,9 @@
 
 
 
-data "aws_security_group" "allow_all" {
-  name = "allow_all"
-}
+#data "aws_security_group" "allow_all" {
+ # name = "allow_all"
+#}
 
 
 
