@@ -3,7 +3,7 @@
 
 
 data "aws_security_group" "allow_all" {
-  name = "allow_all1"
+  name = "allow_all"
 }
 
 
