@@ -1,3 +1,3 @@
 bucket         = sambadevops
-key            = "roboshop/prod/terrafrom.tfstate"
+key            = "roboshop/prod/terraform.tfstate"
 region         = "us-east-1"
