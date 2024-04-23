@@ -7,3 +7,13 @@ we can do pull mechanism id do we can install ansible on the perticuler node
 ansibel-pull -i localhost,U [git hub url] 01-print.yml
 
 
+terraform provisioners
+-------------------
+provisioner is the one which is done some action after resource creation and this sub resorce
+it has 3 types
+1)file:you want to copy some files in server
+2)local-exec run some commands on the local machine
+3) remote-exec
+if you want to write code you can go video28(session 27)
+
+
