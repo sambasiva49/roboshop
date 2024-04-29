@@ -40,3 +40,13 @@
 ##variable from files
 ## play level varibles
 ## inventory varibles
+
+- name: Demo on Register Variable
+  hosts: all
+  tasks:
+    - name: Run uptime shell command
+      ansible.builtin.shell:
+      register: output
+    - name: Print output
+      ansible.bultin.debug:
+        msg: "{{ output }}"

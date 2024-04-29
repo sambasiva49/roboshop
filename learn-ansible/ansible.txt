@@ -1,0 +1,36 @@
+boto core and boto3 is ansible talk to aws
+ansible inventory:ansible maintain some node that node information in file that file is called inventory
+just create one ec2 machine it t3.micro for practice purpose
+ater installation of ansible in the workstation there you need to create one file
+vi /tmp/inv in this file you need to give private ip add of ec2
+that node connect to ssh to do this
+ansible -i /temp/inv all -e  ansible_user=centos -e ansible_password=DevOps321 -m ansible.builtin.ping
+if you remove the cache rm -rf .ansible
+if you want to install any module ansible.builtin.yum then you need to give arguments
+ansible -i /temp/inv all -e  ansible_user=centos -e ansible_password=DevOps321 -m ansible.builtin.yum -a nginx it will go and install nginx
+in the remote node and -a(arguments) and these are the commands called ad-hoc commands
+if you have one or two nodes you don't write a file you simple give like  this command ansible -i privete ip adress with comma all
+ex: ansible -i 172.31.42.51,172.31.42.52 all and above commands  even one node you need to give comma
+
+if you want to pull the code one same machine first you need to install ansible on the server then
+ansible-pull -i localhost, -U git hub repo 01-print.yml
+
+roles is your code is oraganizing
+
+
+afer basic structure of roboshop to execute in command line give this
+ansible-playbook -i localhost, roboshop.yml -e ansible_user=centos -e ansible_password=DevOps321 -e role_nmae=frontend
+
+
+parameter store
+-----------
+in aws goto system manager and serch for parameter store then give the name >> test.test value >> hello
+                ---------here i want to write something ....-----------
+
+
+ key management service
+ --------------------
+ go to aws and search fro kms ans > aws managed keys >create manage key .symmetric >next .alias ---> roboshop> next > finish
+
+
+
