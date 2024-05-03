@@ -1,0 +1,12 @@
+- name: Print a Parameter
+  hosts: localhost
+  connection: local                  #ansible-playbook -i localhost, 04-paarameter.yml (if you put local this small command enough )
+  tasks:
+    - name: print a parameter
+      ansible.builtin.debug:
+        msg: parameter - {{ lookup('amazon.aws.aws_ssm', 'test.test' , region='us-east-1' ) }}
+
+
+
+# you want to run in workstation give the command
+# ansible-playbook -i localhost, 04-paarameter.yml -e ansible_user=centos -e ansible_password=DevOps321

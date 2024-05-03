@@ -1,3 +1,10 @@
+what is the problem with shell scripting
+you have to login in the server .
+imperative :which is os and which flvor of os which version you need to know on the other hand declarative everthing takinen care by this
+
+
+
+
 boto core and boto3 is ansible talk to aws
 ansible inventory:ansible maintain some node that node information in file that file is called inventory
 just create one ec2 machine it t3.micro for practice purpose
@@ -16,9 +23,18 @@ if you want to pull the code one same machine first you need to install ansible 
 ansible-pull -i localhost, -U git hub repo 01-print.yml
 
 roles is your code is oraganizing
+play level varible can access from any
+task level variable : it can access only for that task we can't access other tasks
+file variable it is from other file it doest support task level only play level
+roles variable
 
 
-afer basic structure of roboshop to execute in command line give this
+ansible play book is like kitchen book
+Ansible roles different task like a role colud be setting up a server ,database or holding user account
+anisble task might be chopping veggies grilling chicken or boiling pasta  like installing software, configuring files, or restarting services.
+
+
+after basic structure of Roboshop to execute in command line give this
 ansible-playbook -i localhost, roboshop.yml -e ansible_user=centos -e ansible_password=DevOps321 -e role_nmae=frontend
 
 

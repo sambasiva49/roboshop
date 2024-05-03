@@ -1,0 +1,38 @@
+- name: configure Nodejs Repos
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+
+- name: Install NodeJS
+  ansible.builtin.yum:
+    name: nodeJS
+    state: installed
+
+ - name: Include app_prerequisites
+   ansible.builtin.import_tasks:
+     file: app_prereq.yml
+
+- name: Install Nodejs Dependencies
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
+- name: Include Schema setup
+   ansible.builtin.import_tasks:
+     file: schema_setup.yml
+
+- name: Include SystemD setup
+   ansible.builtin.import_tasks:
+     file: systemd_setup.yml
+
+
+
+
+
+
+
+
+
+
+
+## you need to create separate file in ansible or yml for every funtion in shell scrpting
+
+

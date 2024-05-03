@@ -23,3 +23,21 @@ execute shell >
 this project parametarized>add para>chioce para>name-->env>choices-->dev prod
 terraform init -backend-config=env-${env}/state.tfvars
 terraform apply -auto-approve -var-file=env-${env}/main.tfvars
+
+
+ansible
+______________________________________
+go to new item >roboshop-ansible> freestyle >restricticed where this >workstation >project pramaterized >string parameter
+name <--- component description <---- which component you want to run > git > repository Url >main >color ANSI <---xterm
+build steps >execute shell >
+ansible-playbook -i ${component}-dev.sambadevops.online roboshop.yml -e ansible_user=centos -e ansible_password=DevOps321 -e role_name=${component}
+>post build actions >see in the terraform
+run with parameters give <---- frontend >build
+
+
+aws_parameters
+----------------------
+same name create freestyle job
+
+parameterized >choice >env> dev prod >restrice> workstation >git >main>clor> execute shell <-----terraform init -backend-config=env-${env}/state.tfvars
+terraform apply -var-file=env-${env}/main.tfvars -auto-approve

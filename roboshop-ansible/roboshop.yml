@@ -1,5 +1,5 @@
 - name: Roboshop Project Setup
   hosts: all
-  become: yes
+  become: yes # this is used to run as a root user
   roles:
     - "{{ role_name }}"

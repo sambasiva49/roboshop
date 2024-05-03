@@ -5,10 +5,10 @@
 - name: Install Ngnix
   ansible.builtin.yum:
     name: nginx
-    state: latest
+    state: latest        # latest means it will always upgrade
 
 - name: Copy roboshop config file
-  ansible.builtin.copy:
+  ansible.builtin.template:   #here template instead of copy becasue parameter hide in the confuguration file (robashop.confg)
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
@@ -32,4 +32,4 @@
   ansible.builtin.systemd:
     state: restarted
     name: nginx
-    enabled: true
+    enabled: true           #systemctl enable nginx
