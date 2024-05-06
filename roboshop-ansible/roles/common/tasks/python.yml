@@ -1,13 +1,17 @@
-- name: Insatall Maven
+- name: Install python
   ansible.builtin.yum:
-    name: mavent
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
 
 - name: Include app_prerequisites
   ansible.builtin.import_tasks:
     file: app_prereq.yml
 
 - name: Download Maven Dependencies
-  ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
+  ansible.builtin.shell: pip3.6 install -r requirments.txt
     args:
       chdir: /app
 

@@ -13,7 +13,11 @@ parameters = [
   { name = "dev.cart.catalogue_host" ,      value =  "catalogue-dev.sambadevops.online" },
   { name = "dev.cart.redis_host" ,          value =  "redis-dev.sambadevops.online" },
   { name = "dev.cart.catalogue_port" ,      value =  "8080" },
+  { name = "dev.shipping.cart_endpoint" ,   value =  "cart-dev.sambadevops.online:8080" },
+  { name = "dev.shipping.db_host" ,          value =  "mysql-dev.sambadevops.online" },
 
 ]
 
 
+Environment=CART_ENDPOINT=cart-dev.sambadevops.online:8080
+Environment=DB_HOST=mysql-dev.sambadevops.online
