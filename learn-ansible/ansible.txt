@@ -49,4 +49,9 @@ in aws goto system manager and serch for parameter store then give the name >> t
  go to aws and search fro kms ans > aws managed keys >create manage key .symmetric >next .alias ---> roboshop> next > finish
 
 
+ ansible exams topics
+ --------------------
+ facts: 
+
+
 
